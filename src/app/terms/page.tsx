@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | MountE Consulting",
+  title: "Terms & Conditions",
   description: "Terms and conditions for using the MountE Consulting website.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    url: absoluteUrl("/terms"),
+  },
 };
 
 export default function TermsPage() {

@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | MountE Consulting",
+  title: "Privacy Policy",
   description: "Privacy policy for the MountE Consulting website.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    url: absoluteUrl("/privacy"),
+  },
 };
 
 export default function PrivacyPage() {

@@ -1,16 +1,4 @@
-/** Site copy sourced from mounteconsulting.com (home + about). */
-
-export const siteMeta = {
-  home: {
-    title: "MountE Consulting - DS/Retool/MMM",
-    description: "Transform your business with Data-Driven solutions",
-  },
-  about: {
-    title: "About | MountE Consulting",
-    description:
-      "At MountE Consulting, we help both enterprise and individual clients who are looking to make data-driven decisions. Our clients come from a variety of industries including E-commerce, technology, retail, logistics, entertainment, sports, and more. We work closely with our clients to understand their unique needs and provide customized solutions to help them achieve their goals.",
-  },
-} as const;
+/** Site copy sourced from mounteconsulting.com (home + about). Global SEO defaults live in `src/lib/seo.ts`. */
 
 export const home = {
   hero: {
@@ -174,6 +162,8 @@ export const home = {
 
 export const about = {
   title: "About MountE Consulting",
+  metaDescription:
+    "At MountE Consulting, we help both enterprise and individual clients who are looking to make data-driven decisions. Our clients come from a variety of industries including E-commerce, technology, retail, logistics, entertainment, sports, and more. We work closely with our clients to understand their unique needs and provide customized solutions to help them achieve their goals.",
   sections: [
     {
       heading: "Who We Help",

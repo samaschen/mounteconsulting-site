@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
-import { about, siteMeta } from "@/lib/content";
+import { about } from "@/lib/content";
+import { absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: siteMeta.about.title,
-  description: siteMeta.about.description,
+  title: "About",
+  description: about.metaDescription,
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    url: absoluteUrl("/about"),
+  },
 };
 
 function SectionBody({

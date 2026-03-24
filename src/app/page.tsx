@@ -7,16 +7,32 @@ import { ClientLogos } from "@/components/ClientLogos";
 import { TestimonialsStrip } from "@/components/TestimonialsStrip";
 import { ContactForm } from "@/components/ContactForm";
 import { ServicesGrid } from "@/components/ServicesGrid";
-import { home, siteMeta } from "@/lib/content";
+import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
+import { home } from "@/lib/content";
+import { ogImagePath, siteDescription, siteName, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: siteMeta.home.title,
-  description: siteMeta.home.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    url: siteUrl,
+    title: siteName,
+    description: siteDescription,
+    images: [{ url: ogImagePath, width: 1200, height: 630, alt: siteName }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [ogImagePath],
+  },
 };
 
 export default function HomePage() {
   return (
     <div id="home">
+      <OrganizationJsonLd />
       <Section
         contained={false}
         padded={false}
